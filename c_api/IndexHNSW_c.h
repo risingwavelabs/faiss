@@ -51,7 +51,7 @@ int faiss_IndexHNSWFlat_entry_point(
 
 int faiss_IndexHNSWFlat_levels(FaissIndexHNSWFlat* p_index, const int** levels);
 
-int faiss_IndexHNSWFlat_neighbours(
+int faiss_IndexHNSWFlat_neighbors(
         FaissIndexHNSWFlat* p_index,
         idx_t no,
         int level_no,
