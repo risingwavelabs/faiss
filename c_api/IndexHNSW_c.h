@@ -27,6 +27,26 @@ FAISS_DECLARE_CLASS_INHERITED(IndexHNSW, Index)
 FAISS_DECLARE_DESTRUCTOR(IndexHNSW)
 FAISS_DECLARE_INDEX_DOWNCAST(IndexHNSW)
 
+void faiss_IndexHNSW_set_ef_construction(
+        FaissIndexHNSW* p_index,
+        int ef_construction);
+
+void faiss_IndexHNSW_set_ef_search(FaissIndexHNSW* p_index, int ef_search);
+
+void faiss_IndexHNSW_entry_point(
+        const FaissIndexHNSW* p_index,
+        idx_t* entry_point,
+        int* max_level);
+
+void faiss_IndexHNSW_levels(const FaissIndexHNSW* p_index, const int** levels);
+
+void faiss_IndexHNSW_neighbors(
+        const FaissIndexHNSW* p_index,
+        idx_t no,
+        int level_no,
+        const FaissHNSWNeighborIdx** neighbors,
+        size_t* neighbor_count);
+
 /** Flat index topped with with a HNSW structure to access elements
  *  more efficiently.
  */
@@ -43,20 +63,6 @@ int faiss_IndexHNSWFlat_new_with_metric(
         int d,
         int m,
         FaissMetricType metric);
-
-int faiss_IndexHNSWFlat_entry_point(
-        FaissIndexHNSWFlat* p_index,
-        idx_t* entry_point,
-        int* max_level);
-
-int faiss_IndexHNSWFlat_levels(FaissIndexHNSWFlat* p_index, const int** levels);
-
-int faiss_IndexHNSWFlat_neighbors(
-        FaissIndexHNSWFlat* p_index,
-        idx_t no,
-        int level_no,
-        const FaissHNSWNeighborIdx** neighbors,
-        size_t* neighbor_count);
 
 #ifdef __cplusplus
 }
