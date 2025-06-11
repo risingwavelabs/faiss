@@ -52,6 +52,18 @@ void faiss_fvec_L2sqr_ny(
     faiss::fvec_L2sqr_ny(dis, x, y, d, ny);
 }
 
+float faiss_fvec_L1(const float* x, const float* y, size_t d) {
+    return faiss::fvec_L1(x, y, d);
+}
+
+float faiss_fvec_L2sqr(const float* x, const float* y, size_t d) {
+    return faiss::fvec_L2sqr(x, y, d);
+}
+
+float faiss_fvec_inner_product(const float* x, const float* y, size_t d) {
+    return faiss::fvec_inner_product(x, y, d);
+}
+
 float faiss_fvec_norm_L2sqr(const float* x, size_t d) {
     return faiss::fvec_norm_L2sqr(x, d);
 }
