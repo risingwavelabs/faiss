@@ -62,6 +62,15 @@ void faiss_fvec_L2sqr_ny(
         size_t d,
         size_t ny);
 
+/// compute the L1 distance between vector x and y
+float faiss_fvec_L1(const float* x, const float* y, size_t d);
+
+/// compute the square L2 distance between vector x and y
+float faiss_fvec_L2sqr(const float* x, const float* y, size_t d);
+
+/// compute the inner product distance between vector x and y
+float faiss_fvec_inner_product(const float* x, const float* y, size_t d);
+
 /// squared norm of a vector
 float faiss_fvec_norm_L2sqr(const float* x, size_t d);
 
