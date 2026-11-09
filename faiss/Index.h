@@ -12,7 +12,6 @@
 
 #include <faiss/MetricType.h>
 #include <cstdio>
-#include <sstream>
 #include <string>
 #include <typeinfo>
 
